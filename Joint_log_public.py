@@ -33,7 +33,6 @@ station1 = {'Temp_snow': '',
 station2 = {'Hum_basement': '',
             'Temp_basement': ''}
 
-
 def retrieveVals(links, cols):
     df = pd.DataFrame(columns=cols)  # create an empty dataframe with predefined names of columns
     driver = webdriver.Chrome()  # define which browser will be used by selenium
@@ -50,7 +49,6 @@ def retrieveVals(links, cols):
         df['Timestamp'] = sensorDF['Timestamp']  # add data from it to the general dataframe
         df[key] = sensorDF[key]
     return df
-
 
 # use the function for both weather stations
 df1 = retrieveVals(station1, sensors)
